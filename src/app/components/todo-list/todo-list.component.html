@@ -1,0 +1,4 @@
+<app-entry (itemAdded)="add($event)"></app-entry>
+<app-list (clearCompletedItems)="clearCompleted()"
+          (markItemComplete)="markComplete($event)"
+          [todoItems]="todos$ | async"></app-list>

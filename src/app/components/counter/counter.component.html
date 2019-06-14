@@ -1,0 +1,33 @@
+<input type="button"
+       (click)="decrement()"
+       [disabled]="decrementDisabled$ | async"
+       class="btn btn-sm btn-primary"
+       value="-">
+<span>{{ current$ | async}}</span>
+<input type="button"
+       (click)="increment()"
+       class="btn btn-sm btn-primary"
+       value="+">
+<input type="button"
+       (click)="reset()"
+       [disabled]="atZero$ | async"
+       class="btn btn-sm btn-primary"
+       value="Reset">
+<div class="row">
+  <div class="btn-group"
+       role="group"
+       aria-label="Basic example">
+    <button type="button"
+            (click)="setCountBy(1)"
+            [disabled]="(by$ | async) === 1"
+            class="btn btn-secondary">1</button>
+    <button type="button"
+            (click)="setCountBy(3)"
+            [disabled]="(by$ | async) === 3"
+            class="btn btn-secondary">3</button>
+    <button type="button"
+            (click)="setCountBy(5)"
+            [disabled]="(by$ | async) === 5"
+            class="btn btn-secondary">5</button>
+  </div>
+</div>
